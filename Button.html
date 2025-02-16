@@ -1,0 +1,44 @@
+<html>
+	<head>
+        <style>
+            .button {
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+		}
+        .button1 {background-color: red;}
+        </style>
+	</head>
+
+	<body>
+        <button class = "button button1"
+                onclick = "changeColour('button1');">Button</button>
+        <script>
+            function changeColour(element) {
+                const btns = document.getElementsByClassName(element);
+                const currentColor = window.getComputedStyle(btns[0]).backgroundColor;
+
+                switch(currentColor) {
+                    case "rgb(255, 0, 0)": 
+                        btns[0].style.backgroundColor = "rgb(255, 255, 0)";
+                        break;
+
+                    case "rgb(255, 255, 0)": 
+                        btns[0].style.backgroundColor = "rgb(0, 128, 0)";
+                        break;
+
+                    case "rgb(0, 128, 0)": 
+                        btns[0].style.backgroundColor = "rgb(255, 0, 0)";
+                        break;
+                }
+            }
+        </script>
+        
+    </body>
+</html>
